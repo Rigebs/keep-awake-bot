@@ -1,0 +1,13 @@
+name: Keep Awake Bot
+
+# Cron schedule: cada 5 minutos
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hacer ping a la URL
+        run: curl -s https://riga.onrender.com
