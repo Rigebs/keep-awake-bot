@@ -1,13 +1,17 @@
-name: Keep Awake Bot
+name: Keep Awake Every Minute
 
-# Cron schedule: cada 5 minutos
 on:
-  schedule:
-    - cron: "*/1 * * * *"
+  workflow_dispatch: # Se ejecuta manualmente
 
 jobs:
-  ping:
+  ping-every-minute:
     runs-on: ubuntu-latest
     steps:
-      - name: Hacer ping a la URL
-        run: curl -s https://riga.onrender.com
+      - name: Loop infinito de ping
+        run: |
+          while true
+          do
+            echo "Haciendo ping a la URL..."
+            curl -X GET https://riga.onrender.com
+            sleep 60
+          done
