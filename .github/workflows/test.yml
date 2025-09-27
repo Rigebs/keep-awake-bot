@@ -1,0 +1,25 @@
+name: Workflow de prueba
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Saludo de prueba
+        run: echo "Este es un workflow de prueba"
+
+      - name: Crear un archivo de prueba
+        run: |
+          echo "Hola mundo" > archivo_prueba.txt
+          cat archivo_prueba.txt
+
+      - name: Simular tests
+        run: |
+          echo "Test 1: OK"
+          echo "Test 2: OK"
