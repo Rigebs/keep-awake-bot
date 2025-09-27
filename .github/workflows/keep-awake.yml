@@ -12,6 +12,6 @@ jobs:
           while true
           do
             echo "Haciendo ping a la URL..."
-            curl -X GET https://riga.onrender.com
+            curl -X GET https://riga.onrender.com/api/categories
             sleep 60
           done
